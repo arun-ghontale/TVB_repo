@@ -1,3 +1,4 @@
 *.exe
 TVB_env\
 requirements.txt
+*.swp
