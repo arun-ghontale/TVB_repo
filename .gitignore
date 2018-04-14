@@ -2,3 +2,5 @@
 TVB_env\
 requirements.txt
 *.swp
+db
+
