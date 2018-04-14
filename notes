@@ -1,3 +1,0 @@
-request.method == 'GET'
-for checking in the products list
-request.args['name'] -> get the name of the product

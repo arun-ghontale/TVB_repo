@@ -1,3 +1,0 @@
-something	something else	50$
-something1`	desc1	500$
-oppo	phone	50$
