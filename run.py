@@ -1,11 +1,11 @@
 from flask import Flask, send_from_directory, request, Response
 import pandas as pd
-import pymongo as pm
+from pymongo import MongoClient as pm
 
-
+client =  pm('localhost',27017)
 app = Flask('mini-amazon', static_url_path='')
 
-
+DB = client.products
 # def save_form(product):
 #     print('saving...')
 #     with open("forms.txt", "a") as myfile:
@@ -33,22 +33,24 @@ def index():
 def products():
     if request.method == 'POST':
 
+
         product = dict()
         product['name'] = request.form['name']
         product['description'] = request.form['description']
         product['price'] = request.form['price']
 
-
-        return Response('OK', 200)
+        result = DB.products.insert_one(product)
+        print(result)
+        return Response('OK', mimetype = 'application/json' ,status = 200)
 
     elif request.method == 'GET':
-        list_of_prod = load_form()
-
-        for products in list_of_prod:
-            if products['name'] == request.args['name']:
-                return Response(str(products),200)
-
-        return Response(str({}),200)
+ 
+        result = DB.products.find({'name': request.args['name']})
+        match = []
+        for product in result:
+            match.append(product)
+        
+        return Response(str(match),mimetype = 'application/json',status = 200)
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5500)
