@@ -4,4 +4,6 @@ requirements.txt
 *.swp
 db
 run.sublime-workspace
-
+DB/
+mini-am/
+Mongo_client.pyc
