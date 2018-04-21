@@ -1,11 +1,36 @@
+<h1 style="font-size:300%;">Only Admin Access</h1>
+
 <h1>Add Products</h1>
 
 <form action="/api/products" method="post">
+    <input type="text" name="optype" value="add" hidden><br>    
     Name:<br>
     <input type="text" name="name" required><br>
     Description:<br>
     <input type="text" name="description" required><br>
     Price:<br>
     <input type="text" name="price" required><br>
+    <input type="submit">
+</form>
+
+<h1>Delete products</h1>
+<form action="/api/products" method="post">
+    <input type="text" name="optype" value="delete" hidden><br>    
+    Name:<br>
+    <input type="text" name="name" required>
+    <input type="submit">
+</form>
+
+<h1>Update products</h1>
+<form action="/api/products" method="post">
+    <input type="text" name="optype" value="update"hidden><br>    
+    Criterion - Name:<br>
+    <input type="text" name="name-criteria" required><br>
+    Name - change:<br>
+    <input type="text" name="name" required><br>    
+    Description - change:<br>
+    <input type="text" name="description"><br>
+    Price - change:<br>
+    <input type="text" name="price"><br>
     <input type="submit">
 </form>
