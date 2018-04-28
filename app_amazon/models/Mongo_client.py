@@ -1,4 +1,5 @@
 from pymongo import MongoClient as pm
+import re
 
 class mongoclient(object):
 	def __init__(self,port_number):
@@ -39,7 +40,10 @@ class mongoclient(object):
 
 	def find(self,product):
 		# try:
-		result = self.DB_collection.database.find({'name':product})
+		print(product)
+		result = self.DB_collection.database.find({'name':re.compile(product, re.IGNORECASE)})
+
+		# result = self.DB_collection.database.find({'name':product})
 		return result
 		# except Exception as e:
 		# 	print(e)
@@ -90,7 +94,15 @@ class mongoclient_user(object):
 
 	def find(self,product):
 		# try:
-		result = self.DB_collection.user	.find({'name':product})
+		result = self.DB_collection.user.find({'name':product})
+		return result
+		# except Exception as e:
+		# 	print(e)
+		# 	return None
+
+	def find_password(self,password):
+		# try:
+		result = self.DB_collection.user.find({'password':password})
 		return result
 		# except Exception as e:
 		# 	print(e)

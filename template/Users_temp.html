@@ -11,6 +11,8 @@
     <input type="text" name="act" value = "login" hidden ><br>
     <input type="submit" value = "login">
 </form>
+{{ login_message }}
+
 <hr>
 <h1>Signup</h1>
 <form action="/api/users" method="post">
@@ -23,4 +25,6 @@
     <input type="text" name="act" value = "signup" hidden ><br>
     <input type="submit" value = "signup">
 </form>
+{{ signup_message }}
+
 <hr>
