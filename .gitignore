@@ -1,8 +1,5 @@
 #virtual environment
 mini-am/
 
-#dataset
-amazon_co-ecommerce_sample.csv
-
-#zip files
-toy-products-on-amazon.zip
+#CSV files
+*.csv
