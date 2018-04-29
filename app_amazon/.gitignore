@@ -1,6 +1,5 @@
 *.exe
 TVB_env\
-requirements.txt
 *.swp
 db
 run.sublime-workspace
