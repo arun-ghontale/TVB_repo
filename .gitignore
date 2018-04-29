@@ -2,4 +2,4 @@
 mini-am/
 
 #CSV files
-*.csv
+#*.csv
