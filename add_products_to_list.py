@@ -51,4 +51,3 @@ for product_name,product_description,product_price in zip(product_names,product_
 		session.post('http://127.0.0.1:5500/api/products',headers=headers,data=payload)
 	except Exception as e: 
 		print(e)
-
